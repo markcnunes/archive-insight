@@ -1,11 +1,9 @@
 "use client";
 
-import { loadStripe } from "@stripe/stripe-js";
-import { useEffect } from "react";
-
 import { useToast } from "@/components/ui/use-toast";
 import { checkoutCredits } from "@/lib/actions/transaction.action";
-
+import { loadStripe } from "@stripe/stripe-js";
+import { useEffect } from "react";
 import { Button } from "../ui/button";
 
 const Checkout = ({
@@ -45,7 +43,7 @@ const Checkout = ({
         className: "error-toast",
       });
     }
-  }, []);
+  }, [toast]);
 
   const onCheckout = async () => {
     const transaction = {
